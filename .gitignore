@@ -32,3 +32,6 @@
 
 #Add node_modules
 node_modules/
+
+#hide env
+.env/
