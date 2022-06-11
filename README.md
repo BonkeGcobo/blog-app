@@ -1,19 +1,18 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Project Name
+# Blogs App
 
-> Description the project.
+> Educational project for learning ruby on rails
 
 
 ## Built With
 
-- Major languages
-- Frameworks
-- Technologies used
+- Ruby
+- Ruby on Rails
 
 ## Live Demo (if available)
 
-[Live Demo Link](https://livedemo.com)
+[Not Available](https://livedemo.com)
 
 
 ## Getting Started
@@ -23,34 +22,27 @@
 
 
 To get a local copy up and running follow these simple example steps.
+git clone [link](https://github.com/BonkeGcobo/blog-app.git)
+cd blog-app
 
 ### Prerequisites
+ - Ruby
+ - Knowledge of Ruby on rails
+ - Internet Connection
 
-### Setup
-
-### Install
-
-### Usage
 
 ### Run tests
 
-### Deployment
-
-
+Rspec
 
 ## Authors
 
-👤 **Author1**
+👤 **Bonke**
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- GitHub: [@githubhandle](https://github.com/bonkegcobo)
+- Twitter: [@twitterhandle](https://twitter.com/bonkegcobo)
+- LinkedIn: [LinkedIn](https://linkedin.com/in/bonkegcobo)
 
-👤 **Author2**
-
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
 
 ## 🤝 Contributing
 
