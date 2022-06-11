@@ -6,7 +6,6 @@ class CreateUser < ActiveRecord::Migration[7.0]
       t.text :Bio
       t.timestamps
       t.bigint :PostsCounter
-      t.timestamps
     end
   end
 end
