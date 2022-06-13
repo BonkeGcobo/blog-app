@@ -10,52 +10,32 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_06_11_152416) do
+ActiveRecord::Schema[7.0].define(version: 2022_06_13_130245) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "comments", force: :cascade do |t|
-    t.bigint "Author_id"
-    t.bigint "Post_id"
-    t.text "Text"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["Author_id"], name: "index_comments_on_Author_id"
-    t.index ["Post_id"], name: "index_comments_on_Post_id"
-  end
-
-  create_table "likes", force: :cascade do |t|
-    t.bigint "Author_id"
-    t.bigint "Post_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["Author_id"], name: "index_likes_on_Author_id"
-    t.index ["Post_id"], name: "index_likes_on_Post_id"
-  end
-
   create_table "posts", force: :cascade do |t|
     t.bigint "Author_id"
-    t.string "Title", limit: 32
+    t.string "Title"
     t.text "Text"
+    t.datetime "CreatedAt"
+    t.datetime "UpdatedAt"
+    t.integer "CommentsCounter"
+    t.integer "LikesCounter"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "CommentsCounter"
-    t.bigint "LikesCounter"
     t.index ["Author_id"], name: "index_posts_on_Author_id"
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "Name", limit: 32
-    t.string "Photo", limit: 2000
+    t.string "name"
+    t.string "photo"
     t.text "Bio"
+    t.datetime "UpdatedAt"
+    t.datetime "CreatedAt"
+    t.integer "PostsCounter"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "PostsCounter"
   end
 
-  add_foreign_key "comments", "posts", column: "Post_id"
-  add_foreign_key "comments", "users", column: "Author_id"
-  add_foreign_key "likes", "posts", column: "Post_id"
-  add_foreign_key "likes", "users", column: "Author_id"
-  add_foreign_key "posts", "users", column: "Author_id"
 end
