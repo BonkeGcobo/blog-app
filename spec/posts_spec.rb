@@ -27,5 +27,6 @@ describe 'Posts', type: :request do
 
   it 'Test if the user posts are present' do
     expect(response.body).to include('Here is post by user')
+    fi
   end
 end
