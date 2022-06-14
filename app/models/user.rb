@@ -4,6 +4,5 @@ class User < ApplicationRecord
 
   def first_three_posts
     posts.includes(:user).order(created_at: :DESC).limit(3)
-  end
-    
+  end    
 end
