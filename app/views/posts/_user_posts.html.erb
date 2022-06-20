@@ -1,0 +1,10 @@
+<section class="posts">
+  <h1><%= post.Title%></h1>
+  <p><%= post.Text%></p>
+  <% commentsCounter = post.CommentsCounter == nil ? '0' : post.CommentsCounter %>
+  <% likesCounter = post.LikesCounter == nil ? '0' : post.LikesCounter %>
+  <small>
+    Comments: <%=commentsCounter%>, Likes: <%=likesCounter%>       
+  </small>
+</section>
+

@@ -1,0 +1,23 @@
+<section class="user_posts">
+  <%=link_to user_post_path(id:post.id)do%>
+  <div class="card-post">
+    <h1><%= post.Title%></h1>
+    <p><%= post.Text%></p>
+    <% commentsCounter = post.CommentsCounter == nil ? '0' : post.CommentsCounter %>
+    <% likesCounter = post.LikesCounter == nil ? '0' : post.LikesCounter %>
+    <small>
+      Comments: <%=commentsCounter%>, Likes: <%=likesCounter%>       
+    </small>
+  </div>
+  <%end%> 
+
+  <div class="comments">
+    <%comments=post.recent_comments %>
+     <% comments.each do |comment| %>
+        <%= render partial: 'comments/comment', locals: {comment: comment} %>
+     <%end%>
+  </div>
+</section>
+
+
+
