@@ -14,6 +14,4 @@ class Post < ApplicationRecord
   def all_comments
     comments.includes(:post).order(created_at: :DESC)
   end
-
-  
 end
