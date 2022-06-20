@@ -10,4 +10,10 @@ class Post < ApplicationRecord
   def recent_comments
     comments.includes(:post).order(created_at: :DESC).limit(5)
   end
+
+  def all_comments
+    comments.includes(:post).order(created_at: :DESC)
+  end
+
+  
 end

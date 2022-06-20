@@ -5,6 +5,9 @@
 	<title>User_posts</title>
 </head>
 <body>
-  <h1>Here are user posts</h1>
+  <%= render partial: "users/user",  locals: { user: @user_info } %>
+	<% @user_posts.each do |post| %>
+		<%= render partial: "post_byUser", locals: { post: post } %>
+	<% end %>
 </body>
 </html>
