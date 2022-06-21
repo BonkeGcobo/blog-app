@@ -5,8 +5,9 @@
 	<title>User</title>
 </head>
 <body>
-	<section class= 'user'>
+	<section class= 'user-in-info'>
 	  <%= render @user_info %>
+		<h3><%= link_to 'create a post', new_user_path %></h3>
 	</section>
 
 	<section id="bio">
