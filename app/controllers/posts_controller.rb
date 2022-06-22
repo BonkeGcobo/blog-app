@@ -16,7 +16,7 @@ class PostsController < ApplicationController
 
   def create
     user = current_user
-    params.permit! #Permits mass assignment 
+    params.permit! # Permits mass assignment
     post = Post.new(params[:post])
     post.user = user
 

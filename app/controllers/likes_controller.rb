@@ -11,12 +11,12 @@ class LikesController < ApplicationController
     post = Post.find_by(id: post_id.to_i)
     params.permit!
     like = Like.new
-    like.user =user
-    like.post = post 
-    
+    like.user = user
+    like.post = post
+
     if like.save
       like.update_likes
-      redirect_to user_post_url(id:post_id)
+      redirect_to user_post_url(id: post_id)
     end
   end
 end
