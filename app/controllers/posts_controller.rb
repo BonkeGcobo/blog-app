@@ -12,18 +12,24 @@ class PostsController < ApplicationController
   end
 
   def new
-    @user = current_user
+    respond_to do |format|
+      format.html { render :new, locals: { post: Post.new } }
+    end
   end
 
   def create
-    puts params
-    # new object from params
-    # respond_to block
-    # if question saves
-      # success message
-      # redirect to index
-    # else
-      # error message
-      # render new
+    user = current_user
+    params.permit! #Permits mass assignment 
+    post = Post.new(params[:post])
+    post.user = user
+
+    if post.save
+      flash[:notice] = 'Post saved successfully'
+      post.posts_counter
+      redirect_to user_posts_url
+    else
+      flash[:alert] = 'Error: Post could not be saved'
+      redirect_to new_user_post_url
+    end
   end
 end
