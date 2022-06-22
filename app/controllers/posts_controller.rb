@@ -10,4 +10,20 @@ class PostsController < ApplicationController
     puts @post_info
     @post_info
   end
+
+  def new
+    @user = current_user
+  end
+
+  def create
+    puts params
+    # new object from params
+    # respond_to block
+    # if question saves
+      # success message
+      # redirect to index
+    # else
+      # error message
+      # render new
+  end
 end

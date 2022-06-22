@@ -69,9 +69,3 @@ a {
 .see-posts {
   cursor: pointer;
 }
-
-.user-in-info {
-  display: flex;
-  justify-content: space-between;
-  width: 70%;
-}
