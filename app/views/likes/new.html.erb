@@ -1,0 +1,5 @@
+<section class='like'>
+  <%= form_with model: [:user,:post, like], method: :post do |form|%>
+    <%= form.submit "Like"%>
+  <%end%>
+</section>
