@@ -16,7 +16,9 @@ class LikesController < ApplicationController
 
     if like.save
       like.update_likes
-      redirect_to user_post_url(id: post_id)
+    else
+      flash[:alert] = 'Error: Post could not be saved'
     end
+    redirect_to user_post_url(id: post_id)
   end
 end

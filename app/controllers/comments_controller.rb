@@ -18,6 +18,9 @@ class CommentsController < ApplicationController
       flash[:notice] = 'Post saved successfully'
       comment.update_comments_counter
       redirect_to user_post_url(id: post.id)
+    else
+      flash[:alert] = 'Error: Post could not be saved'
+      redirect_to user_post_url(id: post_id)
     end
   end
 end
