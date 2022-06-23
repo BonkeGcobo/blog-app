@@ -21,4 +21,5 @@ class LikesController < ApplicationController
     end
     redirect_to user_post_url(id: post_id)
   end
+  
 end

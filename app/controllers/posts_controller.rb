@@ -16,8 +16,7 @@ class PostsController < ApplicationController
 
   def create
     user = current_user
-    params.permit! # Permits mass assignment
-    post = Post.new(params[:post])
+    post = Post.new(post_params)
     post.user = user
 
     if post.save
@@ -28,5 +27,10 @@ class PostsController < ApplicationController
       flash[:alert] = 'Error: Post could not be saved'
       redirect_to new_user_post_url
     end
+  end
+
+  private 
+  def post_params
+    params.require(:post).permit(:Title, :Text)
   end
 end

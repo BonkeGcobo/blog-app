@@ -7,10 +7,8 @@ class CommentsController < ApplicationController
 
   def create
     user = current_user
-    post_id = params[:post_id]
-    post = Post.find_by(id: post_id.to_i)
-    params.permit!
-    comment = Comment.new(params[:comment])
+    post = Post.find_by(id: post_params.to_i)
+    comment = Comment.new(comment_params)
     comment.user = user
     comment.post = post
 
@@ -22,5 +20,16 @@ class CommentsController < ApplicationController
       flash[:alert] = 'Error: Post could not be saved'
       redirect_to user_post_url(id: post_id)
     end
+  end
+
+
+  private 
+  def comment_params
+    params.require(:comment).permit(:Text)
+  end
+
+  private 
+  def post_params
+    params.require(:post_id)
   end
 end
