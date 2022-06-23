@@ -9,4 +9,9 @@ RSpec.describe User, type: :model do
     subject.name = nil
     expect(subject).to_not be_vaild
   end
+
+  it 'when name is present' do
+    subject.name = 'Kold'
+    expect(subject).to be_vaild
+  end
 end
