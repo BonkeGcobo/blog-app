@@ -1,0 +1,7 @@
+<section class="form-post">
+  <%= form_with model: [:user, post], method: :post do |form| %>
+    <%= form.text_field :Title %>
+    <%= form.text_area :Text%>
+    <%= form.submit "Add Post" %>
+  <% end %>
+</section>

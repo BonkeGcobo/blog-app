@@ -6,6 +6,8 @@
 </head>
 <body>
   <h1>Here is post by user</h1>
-   <%= render partial: "post_info", locals:{post: @post_info}%>
+   <section class="post-by-person">
+     <%= render partial: "post_info", locals:{post: @post_info}%>
+   </section>
 </body>
 </html>

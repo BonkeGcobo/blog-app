@@ -1,0 +1,6 @@
+<section class='comment'>
+  <%= form_with model: [:user,:post, comment], method: :post do |form|%>
+    <%=form.text_area :Text%>
+    <%= form.submit "add comment"%>
+  <%end%>
+</section>

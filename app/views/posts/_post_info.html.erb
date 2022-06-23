@@ -8,7 +8,8 @@
       <h3><%=post.user.name%></h3>
     </div>
     <small>
-      Comments: <%=commentsCounter%>, Likes: <%=likesCounter%>       
+      <%= link_to 'Comments:', new_user_post_comment_path(post_id: post.id)%> <%=commentsCounter%>, 
+      <%= link_to 'Likes:', new_user_post_like_path(post_id: post.id) %> <%=likesCounter%>       
     </small>
   </header>
 
