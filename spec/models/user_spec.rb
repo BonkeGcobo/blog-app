@@ -2,16 +2,12 @@ require 'rails_helper'
 
 RSpec.describe User, type: :model do
   #pending "add some examples to (or delete) #{__FILE__}"
-  subject { User.new(name: "Bonke")}
+  subject { User.new(name: "Bonke", photo: 'https://unsplash.com/photos/F_-0BxGuVvo', Bio: 'Big dreams')}
   before {subject.save}
 
   it "user name should be present" do
-    subject.name = nil
-    expect(subject).to_not be_vaild
-  end
-
-  it 'when name is present' do
-    subject.name = 'Kold'
-    expect(subject).to be_vaild
+    test_case = subject
+    test_case.name = nil
+    expect(test_case.valid?).to eq(false)
   end
 end
