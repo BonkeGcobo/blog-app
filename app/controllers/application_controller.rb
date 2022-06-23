@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
   end
 
   def recent_posts(id)
-    user = User.find_by(id:)
+    user = User.find_by(id:id)
     user.first_three_posts
   end
 end
