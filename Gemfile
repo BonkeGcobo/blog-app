@@ -6,6 +6,9 @@ ruby '3.1.2'
 # add rubocop
 gem 'rubocop', '>= 1.0', '< 2.0'
 
+
+gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
+
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem 'rails', '~> 7.0.3'
 
