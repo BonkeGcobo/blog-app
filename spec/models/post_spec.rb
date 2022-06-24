@@ -13,14 +13,6 @@ RSpec.describe Post, type: :model do
     expect(test_case.valid?).to eq(false)
   end
 
-  it "Title characters must not exceed 250" do
-    test_case= subject
-    exceed_title_length = Faker::Name.name, [number: 260]
-    test_case.Title = exceed_title_length
-    expect(test_case.valid?).to eq(false)
-  end
-
-
   it "Test comment counter is integer greater or equal to zero" do
     test_case= subject
     test_case.CommentsCounter = -1

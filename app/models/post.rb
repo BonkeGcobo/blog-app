@@ -2,7 +2,10 @@ class Post < ApplicationRecord
   belongs_to :user
   has_many :comments # Post can have 0 or more comments
   has_many :likes # Posts can have 0 or more likes
-
+  validates :Title, presence: true, length: {in: 3..250}
+  validates :CommentsCounter ,numericality: {only_integer: true}, comparison: {greater_than_or_equal_to: 0}
+  validates :LikesCounter ,numericality: {only_integer: true}, comparison: {greater_than_or_equal_to: 0}
+  
   def posts_counter
     user.update(PostsCounter: user.posts.count)
   end
