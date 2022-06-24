@@ -10,4 +10,10 @@ RSpec.describe User, type: :model do
     test_case.name = nil
     expect(test_case.valid?).to eq(false)
   end
+
+  it 'Test if the post counter is zero or more than zero' do
+    test_case = subject
+    test_case.PostsCounter = nil
+    expect(test_case.valid?).to eq(false)
+  end
 end
