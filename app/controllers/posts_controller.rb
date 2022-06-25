@@ -20,8 +20,8 @@ class PostsController < ApplicationController
     post.user = user
 
     if post.save
-      flash[:notice] = 'Post saved successfully'
       post.posts_counter
+      flash[:notice] = 'Post saved successfully'
       redirect_to user_posts_url
     else
       flash[:alert] = 'Error: Post could not be saved'
