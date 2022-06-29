@@ -7,5 +7,7 @@ class UsersController < ApplicationController
     my_id = params[:id]
     @user_info = User.find_by(id: my_id.to_i)
     @recent_posts = recent_posts(my_id.to_i)
+    # @current_user = current_user
+    # @user_info = User.find(params[:id])
   end
 end
