@@ -43,6 +43,18 @@ Rspec
 - Twitter: [@twitterhandle](https://twitter.com/bonkegcobo)
 - LinkedIn: [LinkedIn](https://linkedin.com/in/bonkegcobo)
 
+👤 Islam Bahnas
+
+- GitHub: [@Banstein](https://github.com/Banstein)
+- Twitter: [@islam_bahnas](https://twitter.com/islam_bahnas)
+- LinkedIn: [islam-bahnas](www.linkedin.com/in/islam-bahnas)
+
+👤 **Nicholas Mutale**
+
+- GitHub: [@mutalenic](https://github.com/Mutalenic)
+- Twitter: [@nicomutale](https://twitter.com/nicomutale)
+- LinkedIn: [@nicomutale](https://www.linkedin.com/in/nicomutale/)
+
 
 ## 🤝 Contributing
 
