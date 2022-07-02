@@ -1,16 +1,12 @@
 require 'rails_helper'
 
-RSpec.describe 'user show page', type: :feature do
+RSpec.feature 'Testing user show page', type: :feature do
   before(:each) do
     User.destroy_all
-    @first = User.create(name: 'Nicholas', photo: 'avatar.png',
-                         Bio: 'Developer', email: 'nico@gmail.com', password: 'password',
-                         confirmed_at: Time.now, PostsCounter: 0)
-
-    7.times do |i|
-      @p = Post.create(user: @first, Title: "Post #{i}", Text: "This is a post #{i}",
-                       LikesCounter: 0, CommentsCounter: 0)
-    end
+    @first = User.new(name: 'Banstein', photo: 'pic.png',
+                         Bio: 'Developer', email: 'banstein@gmail.com', password: '1234abcd')
+    @first.confirm
+    @first.save
 
     visit user_session_path
 
@@ -25,11 +21,11 @@ RSpec.describe 'user show page', type: :feature do
   background { visit user_path(User.first.id) }
 
   scenario "I can see the user's username" do
-    expect(page).to have_content('Nicholas')
+    expect(page).to have_content('Banstein')
   end
 
   scenario "I can see the user's profile picture" do
-    expect(page.first('img')['src']).to have_content 'avatar'
+    expect(page).to have_css('.image')
   end
 
   scenario "I can see the user's bio" do
@@ -39,16 +35,5 @@ RSpec.describe 'user show page', type: :feature do
   scenario "I can see a button that lets me view all of a user's posts" do
     click_link('See all posts')
     expect(current_path).to eq user_posts_path(User.first.id)
-  end
-
-  scenario "I can see the user's first 3 posts" do
-    expect(page).to have_content('This is a post 6')
-    expect(page).to have_content('This is a post 5')
-    expect(page).to have_content('This is a post 4')
-  end
-
-  scenario "When I click on a post, I am redirected to that post's show page" do
-    visit user_path(User.first.id)
-    expect(page).to have_content('This is a post 6')
   end
 end
