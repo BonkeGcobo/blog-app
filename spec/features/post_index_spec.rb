@@ -75,11 +75,9 @@ RSpec.describe 'Posts show page', type: :feature do
       expect(page).to have_content 'Nic'
     end
 
-
     scenario "When I click on a post, I am redirected to that post's show page" do
       click_link 'My title'
       expect(current_path).to eq "/users/#{User.first.id}/posts/#{Post.first.id}"
     end
-
   end
 end

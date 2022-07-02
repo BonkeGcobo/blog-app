@@ -36,7 +36,6 @@ RSpec.describe 'Posts show page', type: :feature do
       expect(page).to have_content 'Nicholas'
     end
 
-
     it 'Can see the username of each commentor' do
       expect(page).to have_content 'Nicholas'
     end

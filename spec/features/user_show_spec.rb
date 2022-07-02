@@ -1,7 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature 'user show page',
-              type: :feature do
+RSpec.describe 'user show page', type: :feature do
   before(:each) do
     User.destroy_all
     @first = User.create(name: 'Nicholas', photo: 'avatar.png',
