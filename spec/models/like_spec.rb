@@ -3,8 +3,8 @@ require 'rails_helper'
 RSpec.describe Like, type: :model do
   user = User.new(name: 'Saied', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', Bio: 'developer',
                   email: 'saied@gmail.com', password: '123456')
-  post = Post.new(user: user, Title: 'title', Text: 'text')
-  subject { Like.new(user: user, post:) }
+  post = Post.new(user:, Title: 'title', Text: 'text')
+  subject { Like.new(user:, post:) }
   before { subject }
 
   it 'author is nil' do

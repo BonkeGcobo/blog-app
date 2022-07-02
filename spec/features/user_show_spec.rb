@@ -4,7 +4,7 @@ RSpec.feature 'Testing user show page', type: :feature do
   before(:each) do
     User.destroy_all
     @first = User.new(name: 'Banstein', photo: 'pic.png',
-                         Bio: 'Developer', email: 'banstein@gmail.com', password: '1234abcd')
+                      Bio: 'Developer', email: 'banstein@gmail.com', password: '1234abcd')
     @first.confirm
     @first.save
 
