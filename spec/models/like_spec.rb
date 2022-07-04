@@ -1,16 +1,21 @@
 require 'rails_helper'
 
 RSpec.describe Like, type: :model do
-  # pending "add some examples to (or delete) #{__FILE__}"
-  user = User.create(name: 'Bonke', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', Bio: 'Big dreams',
-                     PostsCounter: 0)
-  post = Post.create(user:, Title: 'Bornfire', Text: 'My name is Earl', CommentsCounter: 0, LikesCounter: 0)
+  user = User.new(name: 'Saied', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', Bio: 'developer',
+                  email: 'saied@gmail.com', password: '123456')
+  post = Post.new(user:, Title: 'title', Text: 'text')
+  subject { Like.new(user:, post:) }
+  before { subject }
 
-  subject { Like.create(post:, user:) }
-
-  it 'Test if the Likes counter gets updated' do
+  it 'author is nil' do
     test_case = subject
-    test_case.update_likes
-    expect(post.LikesCounter).to eq(1)
+    test_case.user = nil
+    expect(test_case).to_not be_valid
+  end
+
+  it 'post is nil' do
+    test_case = subject
+    test_case.post = nil
+    expect(test_case).to_not be_valid
   end
 end

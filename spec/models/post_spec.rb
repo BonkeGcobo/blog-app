@@ -3,9 +3,9 @@ require 'faker'
 
 RSpec.describe Post, type: :model do
   # pending "add some examples to (or delete) #{__FILE__}"
-  user = User.create(name: 'Bonke', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', Bio: 'Big dreams',
-                     PostsCounter: 0)
-  subject { Post.new(user:, Title: 'Bornfire', Text: 'My name is Earl', CommentsCounter: 0, LikesCounter: 0) }
+  User.create(name: 'Bonke', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', Bio: 'Big dreams',
+              PostsCounter: 0)
+  subject { Post.new(user: nil, Title: 'Bornfire', Text: 'My name is Earl', CommentsCounter: 0, LikesCounter: 0) }
   before { subject.save }
 
   it 'Test if title must not be blank' do
