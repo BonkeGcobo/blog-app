@@ -1,0 +1,10 @@
+<section id="user">
+  <img class="image" src="<%=user.photo%>" alt="user-image" />
+  <%= link_to user_path(user) do%>
+  <div class="card">
+     <h2><%= user.name%> </h2>
+     <% countPosts = user.PostsCounter == nil ? 0 : user.PostsCounter%>
+     <p> Number of posts: <%= countPosts%></p>
+  </div class="card">
+  <%end%>
+</section>

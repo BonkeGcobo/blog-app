@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>User</title>
+</head>
+<body>
+	<section class= 'user'>
+	  <%= render @user_info %>
+	</section>
+
+	<section id="bio">
+		<h6>Bio</h6>
+	   <p><%= @user_info.Bio %></p>
+	</section>
+
+	<section class="posts-by-user">
+	  <% @recent_posts.each do |post| %>
+		  <%= render partial: "posts/user_posts", locals: { post: post } %>
+	  <% end %>
+	</section>
+	<%=link_to user_posts_path(@user_info) do%>
+	  <button class="see-posts">See all posts</button>
+	<%end%>	
+</body>
+</html>

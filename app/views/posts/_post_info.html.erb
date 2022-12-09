@@ -1,0 +1,26 @@
+<section class="post-info">
+<% commentsCounter = post.CommentsCounter == nil ? '0' : post.CommentsCounter %>
+<% likesCounter = post.LikesCounter == nil ? '0' : post.LikesCounter %>
+  <header class='my-header'>
+    <div class="posts-by">
+      <h1><%=post.Title%></h1>
+      <h3>by</h3>
+      <h3><%=post.user.name%></h3>
+    </div>
+    <small>
+      <%= link_to 'Comments:', new_user_post_comment_path(post_id: post.id)%> <%=commentsCounter%>, 
+      <%= link_to 'Likes:', new_user_post_like_path(post_id: post.id) %> <%=likesCounter%>       
+    </small>
+  </header>
+
+  <div class="post-content">
+    <p><%= post.Text %></p>
+  </div>
+</section>
+
+<section class='user_comments'>
+  <%comments=post.all_comments %>
+    <% comments.each do |comment| %>
+      <%= render partial: 'comments/comment', locals:{comment: comment}%>
+    <%end%>
+</section>

@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>User_posts</title>
+</head>
+<body>
+   <h1><%= link_to 'create post', new_user_post_path %></h1>
+  <%= render partial: "users/user",  locals: { user: @user_info } %>
+	<% @user_posts.each do |post| %>
+		<%= render partial: "post_byUser", locals: { post: post } %>
+	<% end %>
+</body>
+</html>
